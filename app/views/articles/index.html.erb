@@ -9,3 +9,24 @@
         <li><%= link_to 'create an account', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
     </ul>
+
+<section class="bg-light text-center py-5">
+  <h2 class="mb-5">table</h2>
+  <div class="container">
+
+  <table class="table table-hover">
+    <thead>
+      <tr><th>Plan youtubeA</th><th>Plan youtubeB</th><th>Plan youtubeC</th></tr>
+    </thead>
+
+    <tbody>
+      <tr><td><%= link_to "youtubeA", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-info btn-sm" %></td>
+      <td><%= link_to "youtubeB", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-primary btn-sm" %></td>
+      <td><%= link_to "youtubeC", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-dark btn-sm" %></td></tr>
+      <tr><td><%= link_to "youtubeA", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-warning btn-sm" %></td>
+      <td><%= link_to "youtubeB", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-danger btn-sm" %></td>
+      <td><%= link_to "youtubeC", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-success btn-sm" %></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
