@@ -1,18 +1,33 @@
 <h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
-    <ul class='lists-right'>
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-        <li><%= link_to 'log out', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-        <li><%= link_to 'log in', new_user_session_path, class: "login" %></li>
-        <li><%= link_to 'create an account', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
-    </ul>
+<%# マイページが出来たら消す %>
+  <ul class='lists-right'>
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+      <li><%= link_to 'log out', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    <% else %>
+      <li><%= link_to 'log in', new_user_session_path, class: "login" %></li>
+      <li><%= link_to 'create an account', new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
+  </ul>
+<%# マイページが出来たら消す %>
 
 <section class="bg-light text-center py-5">
+  <div class="container-fluid">
+    <% if @articles.present? %>
+          <%# <li class='list'> %>
+      <div class='row align-items-center' style="margin-left: 0; margin-right: 0;">
+        <% @articles.each do |article| %>
+          <div class="col-md img" style="padding: 0;">
+            <%= image_tag article.image if article.image.attached? %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+<%# 書き方例のため %>
   <h2 class="mb-5">table</h2>
-  <div class="container">
 
   <table class="table table-hover">
     <thead>
@@ -27,6 +42,5 @@
       <td><%= link_to "youtubeB", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-danger btn-sm" %></td>
       <td><%= link_to "youtubeC", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-success btn-sm" %></td></tr>
     </tbody>
-  </table>
-  </div>
-</section>
+  </table> 
+  </section>
