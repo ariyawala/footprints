@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
+
   def edit
     @article = Article.find(params[:id])
     redirect_to root_path if @article.user_id != current_user.id
