@@ -17,9 +17,11 @@
           <%# <li class='list'> %>
       <div class='row align-items-center' style="margin-left: 0; margin-right: 0;">
         <% @articles.each do |article| %>
-          <div class="col-md img" style="padding: 0;">
-            <%= image_tag article.image if article.image.attached? %>
-          </div>
+          <%= link_to article_path(article.id) do %>
+            <div class="col-md img" style="padding: 0;">
+              <%= image_tag article.image if article.image.attached? %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     <% end %>

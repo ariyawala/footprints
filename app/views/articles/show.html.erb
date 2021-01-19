@@ -1,0 +1,68 @@
+<%# 記事の概要 %>
+<div class="article-show">
+  <div class="article-box">
+    <h2 class="name">
+      <%= @article.title %>
+    </h2>
+    <div class='article-img-content'>
+      <div class="images">
+        <%= image_tag @article.image.variant(resize: '500x500'), class:"article-box-img" %> 
+      </div>
+    </div>
+
+    <% if user_signed_in? %>
+      <%if current_user.id == @article.user_id %>
+        <%# <%= link_to '商品の編集', edit_article_path, method: :get, class: "article-red-btn" %>
+        <p class='or-text'>or</p>
+        <%# <%= link_to '削除', article_path(@article), method: :delete, class:'article-destroy' %>
+      <% end %>
+    <% end %>
+
+    <div class="article-explain-box">
+      <div class="detail-article">詳細<br>
+      <%= @article.memo %>
+      </div>
+    </div>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-article">場所</th>
+          <td class="detail-value"><%= @article.place %></td>
+        </tr>
+        <tr>
+          <th class="detail-article">日付</th>
+          <td class="detail-value"><%= @article.date %></td>
+        </tr>
+      </tbody>
+    </table>
+  <%# 記事の概要 %>
+
+  <%# <div class="comment-box"> %>
+    <%# <% if user_signed_in? %>
+      <%# <%= form_with model: [@article, @comment], local: true do |form| %>
+        <%# <%= form.text_field :text, class:"comment-text" %> 
+        <%# <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25" %>
+        <%# <%= form.submit "コメントする", class:"comment-btn" %>
+        <%# <% end %>
+    <%# <% else %>
+        <%# <strong><p>*** コメントの投稿には新規登録/ログインが必要です ***</p></strong> %>
+    <%# <% end %>
+    <%# <h4>- コメント一覧 -</h4>
+      <% if @comments %>
+      <%# <div class="comments", id="comments"> %>
+        <%# <% @comments.each do |comment| %>
+          <%# <div class="comment-case"> %>
+            <%# <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", classs: "comment-name":</strong> %>
+            <%# <div class="comment-info"> %>
+              <%# <div>@<%= comment.user.nickname</div> %>
+              <%# <div><%= comment.created_at.strftime("%Y/%m/%d %H:%M")</div> %>
+            <%# </div> %>
+            <%# <div class="comment-sentence"> %>
+              <%# <p><%= comment.text</p> %>
+            <%# </div> %>
+          <%# </div> %>
+        <%# <% end %>
+      <%# <% end %>
+    <%# </div> %>
+  <%# </div> %>
