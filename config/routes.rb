@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'articles#index'
   
   resources :articles, only: [:index, :new, :create, :show, :destroy, :edit, :update]
-
+  resources :users, only: :show
 end

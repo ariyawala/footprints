@@ -1,0 +1,19 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <section class="bg-light text-center py-5">
+  <div class="container-fluid">
+    <% if @articles.present? %>
+          <%# <li class='list'> %>
+      <div class='row align-items-center' style="margin-left: 0; margin-right: 0;">
+        <% @articles.each do |article| %>
+          <%= link_to article_path(article.id) do %>
+            <div class="col-md img" style="padding: 0;">
+              <%= image_tag article.image %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  </section>
+</div>
