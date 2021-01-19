@@ -14,7 +14,7 @@
       <%if current_user.id == @article.user_id %>
         <%# <%= link_to '商品の編集', edit_article_path, method: :get, class: "article-red-btn" %>
         <p class='or-text'>or</p>
-        <%# <%= link_to '削除', article_path(@article), method: :delete, class:'article-destroy' %>
+        <%= link_to '削除', article_path(@article), method: :delete, class:'article-destroy' %>
       <% end %>
     <% end %>
 
