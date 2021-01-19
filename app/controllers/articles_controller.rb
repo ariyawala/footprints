@@ -26,7 +26,22 @@ class ArticlesController < ApplicationController
     article.destroy
     redirect_to root_path
   end
-  
+
+
+  def edit
+    @article = Article.find(params[:id])
+    redirect_to root_path if @article.user_id != current_user.id
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
 
   private
 
