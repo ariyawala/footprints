@@ -1,0 +1,17 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_with(model: @article, local: true) do |f| %>
+      <h3>投稿する</h3>
+      <%= render 'shared/error_messages', model: f.object %>
+      
+      <%= f.text_field :title, placeholder: "title" %>
+      <%= f.file_field :image, id:"article-image" %>
+      <%= f.text_area :memo, placeholder: "memo", rows: "10" %>
+      <%= f.text_field :place, placeholder: "place" %>
+      <%= f.date_field :date, class: 'form-control date-picker' %>
+
+      <%= f.submit "SEND" %>
+    <% end %>
+    
+  </div>
+</div>
