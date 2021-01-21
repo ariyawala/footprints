@@ -10,8 +10,8 @@
       <% if user_signed_in? %>
         <%if current_user.id == @article.user_id %>
           <div class="buttons text-right mt-1">
-            <%= link_to 'edit', edit_article_path, method: :get, class: "btn btn-outline-info" %>
-            <%= link_to 'delete', article_path(@article), method: :delete, class:'btn btn-outline-danger' %>
+            <%= link_to 'edit', edit_article_path, method: :get, class: "btn btn-outline-info shwbtn" %>
+            <%= link_to 'delete', article_path(@article), method: :delete, class:'btn btn-outline-danger shwbtn' %>
           <% end %>
       <% end %>
     </section>
@@ -39,7 +39,7 @@
 
   <div class="comment-column flex-column m-5">
     <h4 class="text-center"> Comments <i class="far fa-comments"></i></h4>
-    <div class="col-6 mx-auto">
+    <div class="col-5 mx-auto">
       <%= form_with model: [@article, @comment], local: true do |form| %>
         <%= form.text_field :text, class:"comment-text-form", placeholder:"add a comment..." %> 
         <%= form.submit "post", class:"btn btn-sm btn-info" %>
