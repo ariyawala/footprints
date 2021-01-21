@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-01-20T05:41:46.778Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="PJguCUpwDf-F-XIrq9J3" version="13.10.0" type="embed">
+<mxfile host="65bd71144e" modified="2021-01-20T05:59:03.130Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="P-hBXtgPOp8PchuasPEq" version="13.10.0" type="embed">
     <diagram id="Z6DdN_NmTrdIRSZmbnPu" name="Page-1">
         <mxGraphModel dx="1604" dy="521" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
@@ -34,21 +34,6 @@
                         <mxPoint x="-347.05999999999995" y="267.9" as="sourcePoint"/>
                         <mxPoint x="-476.9" y="404.94000000000005" as="targetPoint"/>
                         <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="15" value="&lt;span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;likes&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;ul&gt;&lt;li&gt;user_id&lt;/li&gt;&lt;li&gt;article_id&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="-380" y="390" width="230" height="130" as="geometry"/>
-                </mxCell>
-                <mxCell id="16" value="" style="endArrow=ERmany;html=1;exitX=0.968;exitY=0.955;exitDx=0;exitDy=0;exitPerimeter=0;strokeWidth=2;startArrow=ERone;startFill=0;endFill=0;endSize=13;startSize=13;" edge="1" parent="1" source="2">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="-470" y="340" as="sourcePoint"/>
-                        <mxPoint x="-369" y="387" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="17" value="" style="endArrow=ERone;html=1;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;endFill=0;endSize=13;startSize=13;" edge="1" parent="1" target="3">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="-255" y="390" as="sourcePoint"/>
-                        <mxPoint x="-420" y="290" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>

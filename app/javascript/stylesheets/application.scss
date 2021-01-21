@@ -1,9 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
 @import "top";
-
 @import "layouts/navbar";
-
 @import "common";
+
 @import "users/devise";
+@import "users/show";
+
 @import "articles/index";
+@import "articles/show";

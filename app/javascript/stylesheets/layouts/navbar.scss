@@ -23,9 +23,17 @@
         background-size: 22px !important;
         background-repeat: no-repeat;
       }
+
       .profile-icon {
         background-image: url("~parts3.png");
       }
+      .log-out-icon {
+        background-image: url("~logout.png");
+      }
     }
   }
+}
+
+.my-clr {
+  color: #0e6775;
 }

@@ -1,48 +1,15 @@
-<h1>Articles#index</h1>
-<%# マイページが出来たら消す %>
-  <ul class='lists-right'>
-    <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-      <li><%= link_to 'log out', destroy_user_session_path, method: :delete, class: "logout" %></li>
-    <% else %>
-      <li><%= link_to 'log in', new_user_session_path, class: "login" %></li>
-      <li><%= link_to 'create an account', new_user_registration_path, class: "sign-up" %></li>
-    <% end %>
-  </ul>
-<%# マイページが出来たら消す %>
 
-<section class="bg-light text-center py-5">
-  <div class="container-fluid">
+  <div class="container-fluid bg-white ">
     <% if @articles.present? %>
-          <%# <li class='list'> %>
-      <div class='row align-items-center' style="margin-left: 0; margin-right: 0;">
+      <div class='row justify-content-center' style="margin-left: 0; margin-right: 0;">
         <% @articles.each do |article| %>
           <%= link_to article_path(article.id) do %>
-            <div class="col-md img" style="padding: 0;">
-              <%= image_tag article.image if article.image.attached? %>
+            <div class="col-4 img" style="padding: 1px;">
+              <%= image_tag article.image %>
             </div>
           <% end %>
         <% end %>
       </div>
     <% end %>
   </div>
-
-
-<%# 書き方例のため %>
-  <h2 class="mb-5">table</h2>
-
-  <table class="table table-hover">
-    <thead>
-      <tr><th>Plan youtubeA</th><th>Plan youtubeB</th><th>Plan youtubeC</th></tr>
-    </thead>
-
-    <tbody>
-      <tr><td><%= link_to "youtubeA", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-info btn-sm" %></td>
-      <td><%= link_to "youtubeB", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-primary btn-sm" %></td>
-      <td><%= link_to "youtubeC", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-dark btn-sm" %></td></tr>
-      <tr><td><%= link_to "youtubeA", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-warning btn-sm" %></td>
-      <td><%= link_to "youtubeB", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-danger btn-sm" %></td>
-      <td><%= link_to "youtubeC", "https://www.youtube.com/watch?v=Q-PY5QQj80E", class: "btn btn-success btn-sm" %></td></tr>
-    </tbody>
-  </table> 
-  </section>
+</div>
