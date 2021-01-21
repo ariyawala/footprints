@@ -1,38 +1,32 @@
-<div class="sign-up-page">
-  <div class="card">
-    <div class="card-header">
-      edit post
-    </div>
+<div class="container-fluid">
+  <div class="edit-post-page row bg-white">
+    <div class="card-wrap mx-auto col-6">
+      <div class="card-header bg-white text-center">
+        <strong>Edit Post</strong>
+      </div>
 
     <div class="card-body">
       <%= form_with model:@article, url: article_path, local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
-
+        <div class="form-group">
+          <%= f.file_field :image, class: "form-control-file", id:"article-image"  %>
+        </div>
         <div class="form-group">
           <%= f.text_field :title, class: "form-control", placeholder: "title" %>
         </div>
-
         <div class="form-group">
-          <%= f.file_field :image, class: "form-control", id:"article-image"  %>
+          <%= f.text_area :memo, class: "form-control", placeholder: "write a memo...", rows: "10" %>
         </div>
-
         <div class="form-group">
-          <%= f.text_area :memo, class: "form-control", placeholder: "memo", rows: "10" %>
+          <%= f.text_field :place, class: "form-control", placeholder: "add location" %>
         </div>
-
-        <div class="form-group">
-          <%= f.text_field :place, class: "form-control", placeholder: "place" %>
+        <div class="form-group date">
+          <%= f.date_field :date, class: "form-control date-picker col-3 " %>
         </div>
-
-        <div class="form-group">
-          <%= f.date_field :date, class: "form-control date-picker" %>
-        </div>
-
         <div class="sign-up__submit-btn">
-          <%= f.submit "post", class: "btn btn-block btn-outline-info" %>
+          <%= f.submit "update", class: "btn btn-block btn-outline-info w-25 mx-auto" %>
         </div>
       <% end %>
     </div>
-
   </div>
 </div>

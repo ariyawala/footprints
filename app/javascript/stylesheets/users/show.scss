@@ -1,0 +1,56 @@
+.profile-wrap {
+  margin: 40px 0px;
+}
+
+// .round-img {
+//   border-radius: 50%;
+//   width: 120px;
+//   height: 120px;
+// }
+
+.edit-profile-btn {
+  margin: 15px 0 0 15px;
+  font-weight: bold;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 26px;
+  border-color: #dbdbdb;
+  font-size: 14px;
+}
+
+.setting {
+  background-image: url("~parts4.png");
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  margin: 18px 0 0 10px;
+  background-size: 22px !important;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.my-info {
+  color: #0e6775;
+}
+
+.post-top-authentication {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__post-btn {
+    background: #0e6775;
+    border-radius: 30px;
+    padding: 4px;
+    white-space: nowrap;
+  }
+}
+
+.edit-prf {
+  display: flex;
+  justify-content: center;
+}

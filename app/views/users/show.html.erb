@@ -1,19 +1,38 @@
-<div class="contents row">
-  <p><%= @nickname %>さんの投稿一覧</p>
-  <section class="bg-light text-center py-5">
-  <div class="container-fluid">
-    <% if @articles.present? %>
-          <%# <li class='list'> %>
-      <div class='row align-items-center' style="margin-left: 0; margin-right: 0;">
-        <% @articles.each do |article| %>
-          <%= link_to article_path(article.id) do %>
-            <div class="col-md img" style="padding: 0;">
-              <%= image_tag article.image %>
-            </div>
-          <% end %>
+<%if current_user.id == @user.id %>
+  <div class="profile-wrap">
+    <div class="row">
+      <div class="col-md-4">
+        <%# <%= image_tag avatar_url(@user), class: "round-img" %>
+      </div>
+      <div class="col-md-4 edit-prf">
+        <p class="h1"><%= @nickname %></p>
+        <%= link_to(edit_user_registration_path) do %>
+          <div class="fas fa-user-edit fa-2x my-info fa-fw" data-fa-transform="down-7 right-3"></div>
         <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
-  </section>
-</div>
+<% end %>
+
+<% if @articles.present? %>
+  <h2 class="text-center"><%= @nickname %>'s posts</h2>
+  <div class="container-fluid">
+    <div class='row justify-content-center' style="margin-left: 0; margin-right: 0;">
+      <% @articles.each do |article| %>
+        <%= link_to article_path(article.id) do %>
+          <div class="col-md img" style="padding: 3px;">
+            <%= image_tag article.image %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="post-top-authentication text-center"><p class="lead">You haven't posted any article yet</p>
+    <div class="post-top-authentication__post-btn m-3 mb-5">
+      <%= link_to "post", new_article_path, class: "btn text-white" %>
+    </div>
+  </div>
+<% end %>
+
+

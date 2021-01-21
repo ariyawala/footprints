@@ -1,73 +1,57 @@
 <%# 記事の概要 %>
-<div class="article-show">
-  <div class="article-box">
-    <h2 class="name">
-      <%= @article.title %>
-    </h2>
-    <div class='article-img-content'>
-      <div class="images">
-        <%= image_tag @article.image.variant(resize: '500x500'), class:"article-box-img" %> 
-      </div>
+<div class="article-show-wrap">
+  <div class="article flex-column">
+    
+    <div class="article-imgs pt-4 text-center">
+      <%= image_tag @article.image.variant(resize: '700x500'), class:"article-box-img" %> 
     </div>
-
-    <% if user_signed_in? %>
-      <%if current_user.id == @article.user_id %>
-        <%= link_to '記事の編集', edit_article_path, method: :get, class: "article-red-btn" %>
-        <p class='or-text'>or</p>
-        <%= link_to '削除', article_path(@article), method: :delete, class:'article-destroy' %>
+    
+    <section>
+      <% if user_signed_in? %>
+        <%if current_user.id == @article.user_id %>
+          <div class="buttons text-right mt-1">
+            <%= link_to 'edit', edit_article_path, method: :get, class: "btn btn-outline-info" %>
+            <%= link_to 'delete', article_path(@article), method: :delete, class:'btn btn-outline-danger' %>
+          <% end %>
       <% end %>
-    <% end %>
+    </section>
 
-    <div class="article-explain-box">
-      <div class="detail-article">詳細<br>
-      <%= @article.memo %>
+    <section>
+      <h2 class="name text-center">
+        <%= @article.title %>
+      </h2>
+      <div class="col-6 mx-auto">
+        <div class="detail-article">
+          <%= @article.memo %>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-article">場所</th>
-          <td class="detail-value"><%= @article.place %></td>
-        </tr>
-        <tr>
-          <th class="detail-article">日付</th>
-          <td class="detail-value"><%= @article.date %></td>
-        </tr>
-      </tbody>
-    </table>
-    <span class="name">
-      <a href="/users/<%= @article.user.id %>">
-        <span>投稿者</span><%= @article.user.nickname %>
-      </a>
-    </span>
+    <section class="details mt-4">
+      <h6 class="name text-center">been @
+        <%= @article.place %>
+      </h6>
+      <h6 class="name text-center">date : 
+        <%= @article.date %>
+      </h6>
+    </section>
+  </div>
 
-
-  <%# 記事の概要 %>
-
-  <div class="comment-box">
-    <% if user_signed_in? %>
+  <div class="comment-column flex-column m-5">
+    <h4 class="text-center"> Comments <i class="far fa-comments"></i></h4>
+    <div class="col-6 mx-auto">
       <%= form_with model: [@article, @comment], local: true do |form| %>
-        <%= form.text_field :text, class:"comment-text" %> 
-        <%= image_tag "parts6.png" ,class:"comment-flag-icon" ,width:"20",height:"25" %>
-        <%= form.submit "コメントする", class:"comment-btn" %>
+        <%= form.text_field :text, class:"comment-text-form", placeholder:"add a comment..." %> 
+        <%= form.submit "post", class:"btn btn-sm btn-info" %>
       <% end %>
-    <% else %>
-      <strong><p>*** コメントの投稿には新規登録/ログインが必要です ***</p></strong>
-    <% end %>
-
-    <h4>- コメント一覧 -</h4>
+    </div>
       <% if @comments %>
       <div class="comments", id="comments">
         <% @comments.each do |comment| %>
-          <div class="comment-case">
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", classs: "comment-name" %>:</strong>
-            <div class="comment-info">
-              <div><%= comment.created_at.strftime("%Y/%m/%d %H:%M") %></div>
-            </div>
-            <div class="comment-sentence">
-              <p><%= comment.text%></p>
-            </div>
+          <div class="comment-case col-6 mx-auto m-1 case">
+            <strong class="h6"><%= link_to comment.user.nickname, "/users/#{comment.user_id}", classs: "comment-name" %> : </strong>
+            <p class="h6"><%= comment.text%></p>
+            <p class="text-right"><%= comment.created_at.strftime("%Y/%m/%d %H:%M") %></p>
           </div>
         <% end%>
       </div>
