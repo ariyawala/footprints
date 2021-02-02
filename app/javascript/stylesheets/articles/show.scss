@@ -19,3 +19,26 @@
 .case {
   border-bottom: solid 1px #159eb3;
 }
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-gray {
+  color: lightgray;
+}
+
+.my-pink {
+  color: #ff6699;
+}
+
+.like-text {
+  color: black;
+  font-size: 15px;
+  padding-bottom: 1px;
+}
+
+.my-size {
+  font-size: 1.2rem;
+}

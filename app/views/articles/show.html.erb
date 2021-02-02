@@ -7,13 +7,28 @@
     </div>
     
     <section>
-      <% if user_signed_in? %>
-        <%if current_user.id == @article.user_id %>
-          <div class="buttons text-right mt-1">
-            <%= link_to 'edit', edit_article_path, method: :get, class: "btn btn-outline-info shwbtn" %>
-            <%= link_to 'delete', article_path(@article), method: :delete, class:'btn btn-outline-danger shwbtn' %>
+      <div class="menu container text-center" >
+        <div class="right-menu col-6 mt-2">
+          <% if @article.iine_by(current_user).present? %>
+          <%= link_to article_iine_path(@article,@article.iine_by(current_user)), method: :delete do %>
+            <i class="fas fa-heart my-pink my-size fa-fw" style="solid"></i><span class="like-text">Liked</span>
           <% end %>
-      <% end %>
+          <% else %>
+             <%= link_to article_iines_path(@article.id), method: :post, class: "heart-line" do %>
+              <i class="far fa-heart my-gray my-size fa-fw"></i><span class="like-text">Like</span>
+             <% end %> 
+          <% end %>
+        </div>
+
+        <% if user_signed_in? %>
+          <%if current_user.id == @article.user_id %>
+            <div class="left-menu col-6 buttons text-center mt-1">
+              <%= link_to 'edit', edit_article_path, method: :get, class: "btn btn-outline-info shwbtn" %>
+              <%= link_to 'delete', article_path(@article), method: :delete, class:'btn btn-outline-danger shwbtn' %>
+            </div>
+            <% end %>
+        <% end %>
+      </div>
     </section>
 
     <section>
