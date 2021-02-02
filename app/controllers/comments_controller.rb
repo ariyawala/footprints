@@ -1,7 +1,13 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.create(comment_params)
-    redirect_to "/articles/#{@comment.article.id}"
+    @article = Article.find_by(id: params[:article_id])
+    @comment = Comment.new(comment_params)
+    if @comment.valid?
+      @comment.save
+      redirect_to "/articles/#{@comment.article.id}"
+    else
+      redirect_to article_path(@article.id)
+    end
   end
 
   private
