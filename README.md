@@ -49,6 +49,7 @@ https://github.com/ariyawala/footprints.git
 
 - has_many :articles
 - has_many :comments
+- has_many :likes
 
 ##### articles table
 
@@ -64,12 +65,25 @@ https://github.com/ariyawala/footprints.git
 
 - belongs_to :user
 - has_many :comments
+- has_many :likes
 
 ##### comments table
 
 | Column  | Type       | Options           |
 | ------- | ---------- | ----------------- |
 | text    | text       | null: false       |
+| user    | references | foreign_key: true |
+| article | references | foreign_key: true |
+
+##### Association
+
+- belongs_to :user
+- belongs_to :article
+
+##### likes table
+
+| Column  | Type       | Options           |
+| ------- | ---------- | ----------------- |
 | user    | references | foreign_key: true |
 | article | references | foreign_key: true |
 
