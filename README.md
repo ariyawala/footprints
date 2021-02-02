@@ -1,9 +1,9 @@
-# _Footprints_
+# _Footprints_ (作成中)
 
 ## Overview
 
-Footprints は写真と文章の投稿アプリです。
-投稿した記事を他のユーザーと共有し、それぞれの記事に対しコメントを残せます。
+Footprints は写真と文章の共有アプリです。
+投稿した記事を他のユーザーと共有し、それぞれの記事に対しコメントやいいねを残せます。
 
 #### App URL
 
@@ -31,6 +31,7 @@ https://github.com/ariyawala/footprints.git
   - 記事投稿機能
   - 画像投稿（ActiveStorage）
 - コメント機能
+- いいね機能
 - テスト
   - 単体テスト(model)
 
