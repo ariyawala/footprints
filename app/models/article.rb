@@ -2,7 +2,7 @@ class Article < ApplicationRecord
   belongs_to :user
   has_one_attached :image, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :iines, -> { order(created_at: :desc) }, dependent: :destroy
 
   validates :image, presence: true
   validates :title, presence: true
