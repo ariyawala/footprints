@@ -24,7 +24,7 @@ https://github.com/ariyawala/footprints.git
 - GitHub
 - Heroku
 
-### 2. 機能、非機能一覧
+### 2. 機能一覧
 
 - ユーザー登録、ログイン機能（devise）
 - 投稿機能
